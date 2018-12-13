@@ -3,6 +3,7 @@ package controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import application.TextFieldFormatter;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -72,7 +73,7 @@ public class EditarServicoController extends Controller<Servico> implements Init
 		setServico(servico);
 
 		stage = new Stage();
-		Scene scene = new Scene(parent, 800, 800);
+		Scene scene = new Scene(parent, 800, 500);
 		stage.setScene(scene);
 		stage.setResizable(false);
 		// stage.initStyle(StageStyle.UNDECORATED);
@@ -152,6 +153,14 @@ public class EditarServicoController extends Controller<Servico> implements Init
 		handleLimpar(event);
 	}
 
+	@FXML
+	private void tfValorTotalReleased() {
+		TextFieldFormatter tff = new TextFieldFormatter();
+		tff.setMask("##.##");
+		tff.setCaracteresValidos("0123456789");
+		tff.setTf(tfValorTotal);
+		tff.formatter();
+	}
 	public Servico getServico() {
 		if (servico == null)
 			servico = new Servico();

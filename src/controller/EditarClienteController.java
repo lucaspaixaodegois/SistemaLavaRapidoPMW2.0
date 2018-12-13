@@ -136,7 +136,7 @@ public class EditarClienteController extends Controller<Cliente> implements Init
 		setCliente(cliente);
 
 		stage = new Stage();
-		Scene scene = new Scene(parent, 800, 800);
+		Scene scene = new Scene(parent, 800, 650);
 		stage.setScene(scene);
 		stage.setResizable(false);
 		// stage.initStyle(StageStyle.UNDECORATED);

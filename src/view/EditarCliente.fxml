@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="674.0" prefWidth="800.0" style="-fx-background-color: #FFFAFA;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EditarClienteController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="800.0" style="-fx-background-color: #FFFAFA;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EditarClienteController">
    <bottom>
       <HBox alignment="TOP_RIGHT" prefHeight="20.0" prefWidth="800.0" BorderPane.alignment="TOP_RIGHT">
          <opaqueInsets>
@@ -29,7 +29,7 @@
       </HBox>
    </bottom>
    <center>
-      <AnchorPane prefHeight="700.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="670.0" prefWidth="800.0" BorderPane.alignment="CENTER">
          <children>
             <Pane layoutY="41.0" prefHeight="293.0" prefWidth="800.0" style="-fx-background-color: #5b9ec1; -fx-background-radius: 20 20 20 20;" AnchorPane.bottomAnchor="381.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="41.0">
                <children>
