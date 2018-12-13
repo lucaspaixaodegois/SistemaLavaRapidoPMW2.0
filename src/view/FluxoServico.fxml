@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FluxoServicoController">
+   <center>
+      <AnchorPane prefHeight="460.0" prefWidth="569.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="tvServico" layoutY="112.0" onMouseClicked="#handleMouseClicked" prefHeight="184.0" prefWidth="589.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="115.0">
+               <columns>
+                  <TableColumn fx:id="tcIdServico" prefWidth="16.0" text="Id" />
+                  <TableColumn fx:id="tcNomeCliente" prefWidth="103.0" text="Cliente" />
+                  <TableColumn fx:id="tcDddServico" minWidth="2.0" prefWidth="31.0" text="DDD" />
+                  <TableColumn fx:id="tcNumeroServico" minWidth="2.0" prefWidth="31.0" text="Numero" />
+                  <TableColumn fx:id="tcPlacaServico" prefWidth="51.0" text="Placa" />
+                  <TableColumn fx:id="tcMarcaServico" prefWidth="42.0" text="Marca" />
+                  <TableColumn fx:id="tcModeloServico" prefWidth="77.0" text="Modelo" />
+                  <TableColumn fx:id="tcEntradaServico" prefWidth="51.0" text="Entrada" />
+                  <TableColumn fx:id="tcSaidaServico" prefWidth="39.0" text="Saída" />
+                  <TableColumn fx:id="tcServico" prefWidth="48.0" text="Serviço" />
+                  <TableColumn fx:id="tcValorServico" prefWidth="53.0" text="Valor R$" />
+                  <TableColumn fx:id="tcStatusServico" prefWidth="42.0" text="Status" />
+               </columns>
+            </TableView>
+            <Label alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="30.0" text="De:" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="50.0">
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <DatePicker fx:id="dpDataInicio" layoutX="30.0" layoutY="50.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="25.0" prefWidth="104.0" promptText="00/00/0000" AnchorPane.topAnchor="50.0" />
+            <Label alignment="CENTER_RIGHT" layoutX="135.0" layoutY="50.0" prefHeight="25.0" prefWidth="30.0" text="Até:" AnchorPane.topAnchor="50.0">
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <DatePicker fx:id="dpDataFinal" layoutX="166.0" layoutY="50.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="25.0" prefWidth="104.0" promptText="00/00/0000" AnchorPane.topAnchor="50.0" />
+            <ComboBox fx:id="cbTipoServico" prefWidth="150.0" promptText="Selecione o tipo de Serviço..." AnchorPane.leftAnchor="275.0" AnchorPane.rightAnchor="168.0" AnchorPane.topAnchor="50.0" />
+            <TextField fx:id="tfPlaca" alignment="CENTER" layoutX="324.0" layoutY="50.0" prefHeight="25.0" prefWidth="89.0" promptText="Placa" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="50.0" />
+            <Button layoutX="528.0" layoutY="50.0" mnemonicParsing="false" onAction="#handleBuscar" prefWidth="62.0" text="Buscar" AnchorPane.rightAnchor="0.0">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

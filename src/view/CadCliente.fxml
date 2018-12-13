@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: #FFFAFA;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CadClienteController">
+   <bottom>
+      <HBox alignment="TOP_RIGHT" prefHeight="20.0" prefWidth="800.0" BorderPane.alignment="TOP_RIGHT">
+         <opaqueInsets>
+            <Insets bottom="15.0" right="25.0" />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="10.0" right="25.0" />
+         </padding>
+      </HBox>
+   </bottom>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane layoutX="14.0" layoutY="80.0" prefHeight="358.0" prefWidth="800.0" style="-fx-background-color: #5b9ec1; -fx-background-radius: 20 20 20 20;" AnchorPane.bottomAnchor="380.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+               <children>
+                  <TextField fx:id="tfCodigoArea" layoutX="83.0" layoutY="250.0" onKeyReleased="#tfDDDReleased" prefHeight="27.0" prefWidth="44.0" promptText="DDD" />
+                  <TextField fx:id="tfNumeroCliente" layoutX="142.0" layoutY="251.0" onKeyReleased="#tfTelefoneReleased" prefHeight="25.0" prefWidth="139.0" promptText="NÚMERO" />
+                  <Button layoutX="290.0" layoutY="251.0" mnemonicParsing="false" onAction="#handleAdicionarTelefone" prefHeight="25.0" prefWidth="35.0" text="&gt;&gt;" />
+                  <Label alignment="CENTER_RIGHT" layoutX="-5.0" layoutY="250.0" prefHeight="25.0" prefWidth="80.0" text="Telefone:" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+               <opaqueInsets>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </opaqueInsets>
+            </Pane>
+            <Pane layoutX="56.0" layoutY="374.0" prefHeight="431.0" prefWidth="728.0" style="-fx-background-color: #5b9ec1; -fx-background-radius: 20 20 20 20;" AnchorPane.bottomAnchor="110.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="380.0">
+               <children>
+                  <Button layoutX="292.0" layoutY="120.0" mnemonicParsing="false" onAction="#handleAdicionarVeiculo" prefHeight="25.0" prefWidth="35.0" text="&gt;&gt;" />
+               </children></Pane>
+            <Label alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="80.0" text="Cliente:" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="50.0">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <TextField fx:id="tfNomeCliente" prefHeight="25.0" prefWidth="488.0" AnchorPane.leftAnchor="85.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="50.0" />
+            <Label alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="80.0" text="CPF / CNPJ:" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="85.0">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <TextField fx:id="tfCpfCnpj" prefHeight="25.0" prefWidth="217.0" AnchorPane.leftAnchor="85.0" AnchorPane.rightAnchor="290.0" AnchorPane.topAnchor="85.0" />
+            <Label alignment="CENTER" layoutX="309.0" layoutY="85.0" prefHeight="25.0" prefWidth="80.0" text="Aniversario" textFill="WHITE" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="85.0">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <DatePicker fx:id="dpAniversario" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="85.0" />
+            <Label alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="80.0" text="Endereço:" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="120.0">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <TextField fx:id="tfEndereco" prefHeight="25.0" prefWidth="479.0" AnchorPane.leftAnchor="85.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="120.0" />
+            <Label alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="80.0" text="Email:" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="155.0">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <TextField fx:id="tfEmail" prefHeight="25.0" prefWidth="479.0" AnchorPane.leftAnchor="85.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="155.0" />
+            <HBox alignment="TOP_CENTER" prefHeight="215.0" prefWidth="208.0" AnchorPane.bottomAnchor="135.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="390.0">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="250.0" prefWidth="56.0">
+                     <children>
+                        <Label prefHeight="25.0" prefWidth="80.0" text="Placa:" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="25.0" prefWidth="80.0" text="Marca:" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="25.0" prefWidth="80.0" text="Modelo:" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="25.0" prefWidth="80.0" text="Cor:" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="25.0" prefWidth="80.0" text="Tamanho:" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="250.0" prefWidth="128.0">
+                     <children>
+                        <TextField fx:id="tfPlaca" prefHeight="25.0" prefWidth="80.0" />
+                        <ComboBox fx:id="cbMarca" prefHeight="25.0" prefWidth="136.0" promptText="Selecione...">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </ComboBox>
+                        <ComboBox fx:id="cbModelo" onMouseClicked="#handleModelo" prefHeight="25.0" prefWidth="136.0" promptText="Selecione...">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </ComboBox>
+                        <TextField fx:id="tfCor" prefHeight="25.0" prefWidth="80.0">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <ComboBox fx:id="cbTamanho" prefHeight="25.0" prefWidth="136.0" promptText="Selecione...">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </ComboBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Button fx:id="btIncluir" alignment="TOP_CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleIncluir" prefHeight="40.0" prefWidth="80.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="290.0">
+               <graphic>
+                  <Label alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="20.0" prefWidth="80.0" text="Incluir">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Mini_Icones_50px/btIncluir.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+               </graphic>
+            </Button>
+            <Button fx:id="btAlterar" alignment="TOP_CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleAlterar" prefHeight="40.0" prefWidth="80.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="200.0">
+               <graphic>
+                  <Label alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="20.0" prefWidth="80.0" text="Alterar">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Mini_Icones_50px/btEditar.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+               </graphic>
+            </Button>
+            <Button fx:id="btExcluir" alignment="TOP_CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleExcluir" prefHeight="40.0" prefWidth="80.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="110.0">
+               <graphic>
+                  <Label alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="20.0" prefWidth="80.0" text="Excluir">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Mini_Icones_50px/btExcluir.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+               </graphic>
+            </Button>
+            <Button fx:id="btLimpar" alignment="TOP_CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleLimpar" prefHeight="40.0" prefWidth="80.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="20.0">
+               <graphic>
+                  <Label alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="20.0" prefWidth="80.0" text="Limpar">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Mini_Icones_50px/btLimpar.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+               </graphic>
+            </Button>
+            <TableView fx:id="tvTelefone" layoutX="337.0" layoutY="230.0" prefHeight="123.0" prefWidth="443.0" AnchorPane.leftAnchor="337.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="230.0">
+               <columns>
+                  <TableColumn fx:id="tcCodigoArea" prefWidth="75.0" text="DDD" />
+                  <TableColumn fx:id="tcNumero" prefWidth="390.0" text="Número" />
+               </columns>
+            </TableView>
+            <TableView fx:id="tvVeiculo" layoutX="335.0" layoutY="388.0" prefHeight="215.0" prefWidth="445.0" AnchorPane.bottomAnchor="135.0" AnchorPane.leftAnchor="335.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="390.0">
+              <columns>
+                <TableColumn fx:id="tcPlaca" prefWidth="75.0" text="Placa" />
+                <TableColumn fx:id="tcMarca" prefWidth="115.0" text="Marca" />
+                  <TableColumn fx:id="tcModelo" prefWidth="101.0" text="Modelo" />
+                  <TableColumn fx:id="tcCor" prefWidth="70.0" text="Cor" />
+                  <TableColumn fx:id="tcTamanho" prefWidth="98.0" text="Tamanho" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </center>
+   <top>
+      <Label alignment="CENTER" prefHeight="40.0" prefWidth="600.0" text="CADASTRO DE DADOS DO CLIENTE" textAlignment="CENTER" textFill="#1e1c1c" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Army Thin" size="25.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets top="10.0" />
+         </BorderPane.margin>
+      </Label>
+   </top>
+</BorderPane>

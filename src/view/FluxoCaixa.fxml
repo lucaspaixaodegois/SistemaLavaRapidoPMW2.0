@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FluxoCaixaController">
+   <right>
+      <AnchorPane prefHeight="400.0" prefWidth="20.0" BorderPane.alignment="CENTER" />
+   </right>
+   <bottom>
+      <HBox alignment="TOP_RIGHT" prefHeight="20.0" prefWidth="800.0" BorderPane.alignment="TOP_RIGHT">
+         <opaqueInsets>
+            <Insets bottom="15.0" right="25.0" />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="10.0" right="25.0" />
+         </padding>
+      </HBox>
+   </bottom>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="30.0" text="De:" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="50.0">
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <DatePicker fx:id="dpDataInicio" layoutX="25.0" layoutY="50.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="25.0" prefWidth="104.0" promptText="00/00/0000" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="50.0" />
+            <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="30.0" text="Até:" AnchorPane.leftAnchor="134.0" AnchorPane.topAnchor="50.0">
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <DatePicker fx:id="dpDataFinal" layoutX="164.0" layoutY="50.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="25.0" prefWidth="104.0" promptText="00/00/0000" AnchorPane.leftAnchor="164.0" AnchorPane.topAnchor="50.0" />
+            <Button mnemonicParsing="false" onAction="#handleFiltrar" prefWidth="62.0" text="Filtrar" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Button>
+            <MenuButton fx:id="mbTamanho" mnemonicParsing="false" onAction="#handleTamanho" prefHeight="25.0" prefWidth="89.0" text="Tamanho" AnchorPane.rightAnchor="67.0" AnchorPane.topAnchor="50.0">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Todos" />
+                  <MenuItem mnemonicParsing="false" text="Pequeno" />
+                  <MenuItem mnemonicParsing="false" text="Médio" />
+                  <MenuItem mnemonicParsing="false" text="Grande" />
+               </items>
+            </MenuButton>
+            <TableView fx:id="tvFluxoCaixa" prefHeight="278.0" prefWidth="589.0" AnchorPane.bottomAnchor="62.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">
+               <columns>
+                  <TableColumn fx:id="tcFluxoCaixa" prefWidth="16.0" text="Id" />
+                  <TableColumn fx:id="tcDataFluxoCaixa" minWidth="0.0" prefWidth="42.0" text="Data" />
+                  <TableColumn fx:id="tcServicoFluxoCaixa" prefWidth="217.0" text="Serviço" />
+                  <TableColumn fx:id="tcMarcaFluxoCaixa" prefWidth="52.0" text="Marca" />
+                  <TableColumn fx:id="tcModeloFluxoCaixa" minWidth="0.0" prefWidth="54.0" text="Modelo" />
+                  <TableColumn fx:id="tcTamanhoFluxoCaixa" minWidth="0.0" prefWidth="68.0" text="Tamanho" />
+                  <TableColumn fx:id="tcPlacaFluxoCaixa" minWidth="0.0" prefWidth="53.0" text="Placa" />
+                  <TableColumn fx:id="tcValorFluxoCaixa" minWidth="0.0" prefWidth="57.0" text="Valor R$" />
+               </columns>
+            </TableView>
+            <Label alignment="CENTER_RIGHT" prefHeight="33.0" prefWidth="135.0" text="Faturamento R$:" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="125.0">
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tfFaturamento" alignment="CENTER" prefHeight="33.0" prefWidth="125.0" promptText="10.000,00" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="0.0">
+               <padding>
+                  <Insets bottom="1.0" top="1.0" />
+               </padding>
+               <font>
+                  <Font name="Lucida Sans Typewriter Bold" size="18.0" />
+               </font>
+            </TextField>
+            <ComboBox fx:id="cbTipoServico" layoutX="276.0" prefHeight="25.0" prefWidth="336.0" promptText="Selecione o tipo de Serviço..." AnchorPane.leftAnchor="275.0" AnchorPane.rightAnchor="160.0" AnchorPane.topAnchor="50.0" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

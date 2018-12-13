@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TemplateController">
+   <top>
+      <VBox prefHeight="116.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView disable="true" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@Topo_Icones_100px/logoFinal.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <opaqueInsets>
+                  <Insets left="200.0" />
+               </opaqueInsets>
+            </HBox>
+            <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Bem Vindo: " />
+                        <Label fx:id="labelUsuario" contentDisplay="CENTER" prefHeight="20.0" prefWidth="100.0" text="Usuario" textAlignment="RIGHT" textFill="#014065">
+                           <font>
+                              <Font name="System Bold Italic" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </top>
+   <left>
+      <VBox alignment="TOP_CENTER" prefHeight="530.0" prefWidth="193.0" BorderPane.alignment="TOP_CENTER">
+         <children>
+            <AnchorPane prefHeight="60.0" prefWidth="160.0">
+               <children>
+                  <Button fx:id="btNovoCliente" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleNovoCliente" prefHeight="60.0" prefWidth="206.0" textAlignment="RIGHT">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Mini_Icones_50px/btAddCliente.png" />
+                                 </image>
+                              </ImageView>
+                              <Label contentDisplay="CENTER" prefHeight="27.0" prefWidth="100.0" text="Novo Cliente">
+                                 <font>
+                                    <Font name="Arial Black" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </graphic></Button>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="60.0" prefWidth="160.0">
+               <children>
+                  <Button fx:id="btNovoVeiculo" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleNovoVeiculo" prefHeight="60.0" prefWidth="206.0" textAlignment="RIGHT">
+                     <graphic>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Mini_Icones_50px/btAddCar.png" />
+                                 </image>
+                              </ImageView>
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" prefWidth="150.0" text="Nova Marca/Modelo">
+                                 <font>
+                                    <Font name="Arial Black" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="70.0" prefHeight="60.0" prefWidth="160.0">
+               <children>
+                  <Button fx:id="btNovoServico" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleNovoServico" prefHeight="60.0" prefWidth="206.0" textAlignment="RIGHT">
+                     <graphic>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Mini_Icones_50px/btAddOS.png" />
+                                 </image>
+                              </ImageView>
+                              <Label contentDisplay="CENTER" prefHeight="27.0" prefWidth="100.0" text="Novo Serviço">
+                                 <font>
+                                    <Font name="Arial Black" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="130.0" prefHeight="60.0" prefWidth="160.0">
+               <children>
+                  <Button fx:id="btBuscaCliente" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleBuscaCliente" prefHeight="60.0" prefWidth="206.0" textAlignment="RIGHT">
+                     <graphic>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Mini_Icones_50px/btPesqCliente.png" />
+                                 </image>
+                              </ImageView>
+                              <Label contentDisplay="CENTER" prefHeight="27.0" prefWidth="107.0" text="Buscar Cliente">
+                                 <font>
+                                    <Font name="Arial Black" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="310.0" prefHeight="60.0" prefWidth="160.0">
+               <children>
+                  <Button fx:id="btBuscaVeiculo" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleBuscaVeiculo" prefHeight="60.0" prefWidth="206.0" textAlignment="RIGHT">
+                     <graphic>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Mini_Icones_50px/btPesqCarro.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </ImageView>
+                              <Label contentDisplay="CENTER" prefHeight="27.0" prefWidth="127.0" text="Buscar Veículo">
+                                 <font>
+                                    <Font name="Arial Black" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="190.0" prefHeight="60.0" prefWidth="160.0">
+               <children>
+                  <Button fx:id="btFluxoServico" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleFluxoServico" prefHeight="60.0" prefWidth="206.0" textAlignment="RIGHT">
+                     <graphic>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Mini_Icones_50px/btOS.png" />
+                                 </image>
+                              </ImageView>
+                              <Label contentDisplay="CENTER" prefHeight="27.0" prefWidth="128.0" text="Fluxo de Serviços">
+                                 <font>
+                                    <Font name="Arial Black" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="250.0" prefHeight="60.0" prefWidth="160.0">
+               <children>
+                  <Button fx:id="btFluxoCaixa" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleFluxoCaixa" prefHeight="60.0" prefWidth="206.0" textAlignment="RIGHT">
+                     <graphic>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Mini_Icones_50px/btFluxoCaixa.png" />
+                                 </image>
+                              </ImageView>
+                              <Label contentDisplay="CENTER" prefHeight="27.0" prefWidth="112.0" text="Fluxo de Caixa">
+                                 <font>
+                                    <Font name="Arial Black" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <AnchorPane prefHeight="60.0" prefWidth="160.0">
+               <children>
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleBloquear" prefHeight="60.0" prefWidth="206.0" textAlignment="RIGHT">
+                     <graphic>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Mini_Icones_50px/bloqueio.png" />
+                                 </image>
+                              </ImageView>
+                              <Label contentDisplay="CENTER" prefHeight="27.0" prefWidth="112.0" text="Bloquear">
+                                 <font>
+                                    <Font name="Arial Black" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+               </VBox.margin>
+            </AnchorPane>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </BorderPane.margin>
+         <opaqueInsets>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </opaqueInsets>
+      </VBox>
+   </left>
+   <right>
+      <AnchorPane prefHeight="400.0" prefWidth="20.0" BorderPane.alignment="CENTER" />
+   </right>
+   <center>
+      <ScrollPane fx:id="scrollPane" prefHeight="530.0" prefWidth="354.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets top="10.0" />
+         </BorderPane.margin></ScrollPane>
+   </center>
+   <bottom>
+      <Pane prefHeight="20.0" prefWidth="700.0" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>
