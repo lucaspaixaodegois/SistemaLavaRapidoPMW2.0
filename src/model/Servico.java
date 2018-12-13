@@ -21,7 +21,10 @@ public class Servico extends DefaultEntity<Servico> {
 
 	private String valorTotal;
 	private String taArea;
+	private String entrada;
+	private String saida;
 
+	
 	@Column(columnDefinition = "Date")
 	private LocalDate dataServico;
 
@@ -89,11 +92,6 @@ public class Servico extends DefaultEntity<Servico> {
 		this.dataServico = dataServico;
 	}
 
-	public void setPlacaCliente(Cliente value) {
-		// TODO Auto-generated method stub
-
-	}
-
 	public Status getStatus() {
 		return status;
 	}
@@ -102,5 +100,20 @@ public class Servico extends DefaultEntity<Servico> {
 		this.status = status;
 	}
 
-	
+	public String getEntrada() {
+		return entrada;
+	}
+
+	public void setEntrada(String entrada) {
+		this.entrada = entrada;
+	}
+
+	public String getSaida() {
+		return saida;
+	}
+
+	public void setSaida(String saida) {
+		this.saida = saida;
+	}
+
 }

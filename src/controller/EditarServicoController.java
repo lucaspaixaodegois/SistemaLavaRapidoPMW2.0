@@ -62,16 +62,15 @@ public class EditarServicoController extends Controller<Servico> implements Init
 	private DatePicker dpServico;
 
 	@FXML
-    private TextField tfEntrada;
+	private TextField tfEntrada;
 	@FXML
-    private TextField tfSaida;
+	private TextField tfSaida;
 	@FXML
 	private ComboBox<FormaPagamento> cbFormaPagamento;
 
 	public void abrir(Servico servico) {
 
 		setServico(servico);
-
 		stage = new Stage();
 		Scene scene = new Scene(parent, 800, 500);
 		stage.setScene(scene);
@@ -79,7 +78,6 @@ public class EditarServicoController extends Controller<Servico> implements Init
 		// stage.initStyle(StageStyle.UNDECORATED);
 		stage.initModality(Modality.WINDOW_MODAL);
 
-		// tfPlaca.setText(servico.getPlaca());
 		tfValorTotal.setText(servico.getValorTotal());
 		taArea.setText(servico.getTaArea());
 		cbTipoServico.setValue(servico.getTiposervico());
@@ -87,7 +85,8 @@ public class EditarServicoController extends Controller<Servico> implements Init
 		cbCliente.setValue(servico.getCliente());
 
 		dpServico.setValue(servico.getDataServico());
-
+		tfSaida.setText(servico.getSaida());
+		tfEntrada.setText(servico.getEntrada());
 		atualizarBotoes();
 		stage.show();
 	}
@@ -104,7 +103,8 @@ public class EditarServicoController extends Controller<Servico> implements Init
 
 	@FXML
 	void handleLimpar(ActionEvent event) {
-		// tfPlaca.setText("");
+		tfSaida.setText("");
+		tfEntrada.setText("");
 		taArea.setText("");
 		dpServico.setValue(null);
 		cbCliente.setValue(null);
@@ -112,6 +112,7 @@ public class EditarServicoController extends Controller<Servico> implements Init
 		cbTipoServico.setValue(null);
 		servico = null;
 		tfValorTotal.setText("");
+		cbStatus.setValue(null);
 		atualizarBotoes();
 	}
 
@@ -119,20 +120,21 @@ public class EditarServicoController extends Controller<Servico> implements Init
 	void handleIncluir(ActionEvent event) {
 
 		getServico().setCliente(cbCliente.getValue());
-		// getServico().setPlaca(tfPlaca.getText());
 		getServico().setTiposervico(cbTipoServico.getValue());
 		getServico().setDataServico(dpServico.getValue());
 		getServico().setValorTotal(tfValorTotal.getText());
 		getServico().setFormapagamento(cbFormaPagamento.getValue());
 		getServico().setTaArea(taArea.getText());
-		getServico().setTaArea(tfEntrada.getText());
-		getServico().setTaArea(tfSaida.getText());
-		//getServico().setCliente(cbStatus.getValue());
+		getServico().setEntrada(tfEntrada.getText());
+		getServico().setSaida(tfSaida.getText());
+		getServico().setStatus(cbStatus.getValue());
+
 		System.out.println("teste");
 		super.save(getServico());
 
 		handleLimpar(event);
 	}
+
 	@FXML
 	void handleExcluir(ActionEvent event) {
 		super.remove(getServico());
@@ -141,13 +143,16 @@ public class EditarServicoController extends Controller<Servico> implements Init
 
 	@FXML
 	void handleAlterar(ActionEvent event) {
+
 		getServico().setCliente(cbCliente.getValue());
-		// getServico().setPlaca(tfPlaca.getText());
 		getServico().setTiposervico(cbTipoServico.getValue());
 		getServico().setDataServico(dpServico.getValue());
 		getServico().setValorTotal(tfValorTotal.getText());
 		getServico().setFormapagamento(cbFormaPagamento.getValue());
 		getServico().setTaArea(taArea.getText());
+		getServico().setEntrada(tfEntrada.getText());
+		getServico().setSaida(tfSaida.getText());
+		getServico().setStatus(cbStatus.getValue());
 
 		super.save(getServico());
 		handleLimpar(event);
@@ -161,6 +166,25 @@ public class EditarServicoController extends Controller<Servico> implements Init
 		tff.setTf(tfValorTotal);
 		tff.formatter();
 	}
+
+	@FXML
+	private void tfHoraEntradaReleased() {
+		TextFieldFormatter tff = new TextFieldFormatter();
+		tff.setMask("##:##");
+		tff.setCaracteresValidos("0123456789");
+		tff.setTf(tfEntrada);
+		tff.formatter();
+	}
+
+	@FXML
+	private void tfHoraSaidaReleased() {
+		TextFieldFormatter tff = new TextFieldFormatter();
+		tff.setMask("##:##");
+		tff.setCaracteresValidos("0123456789");
+		tff.setTf(tfSaida);
+		tff.formatter();
+	}
+
 	public Servico getServico() {
 		if (servico == null)
 			servico = new Servico();
@@ -171,32 +195,6 @@ public class EditarServicoController extends Controller<Servico> implements Init
 	public void initialize(URL location, ResourceBundle resources) {
 
 		atualizarBotoes();
-		// adicionando o conteudo do combobox
-		cbTipoServico.getItems().addAll(TipoServico.values());
-		// sobreescrevendo o método que mostra o conteudo do combobox
-		cbTipoServico.setCellFactory(c -> new ListCell<TipoServico>() {
-			@Override
-			protected void updateItem(TipoServico item, boolean empty) {
-				super.updateItem(item, empty);
-
-				if (item == null || empty)
-					setText(null);
-				else
-					setText(item.getLabel());
-			}
-		});
-//		// seobrescreendo o método que mostra o conteudo selecionado
-//		cbTipoServico.setButtonCell(new ListCell<TipoServico>() {
-//			@Override
-//			protected void updateItem(TipoServico item, boolean empty) {
-//				super.updateItem(item, empty);
-//
-//				if (item == null || empty)
-//					setText(null);
-//				else
-//					setText(item.getLabel());
-//			}
-//		});
 
 		// adicionando o conteudo do combobox
 		cbFormaPagamento.getItems().addAll(FormaPagamento.values());
@@ -225,63 +223,59 @@ public class EditarServicoController extends Controller<Servico> implements Init
 			}
 		});
 
-		// TODO Auto-generated method stub
-		// adicionando o conteudo do combobox
-//				cbFormaPagamento.getItems().addAll(FormaPagamento.values());
-//				// sobreescrevendo o método que mostra o conteudo do combobox
-//				cbFormaPagamento.setCellFactory(c -> new ListCell<FormaPagamento>() {
-//					@Override
-//					protected void updateItem(FormaPagamento item, boolean empty) {
-//						super.updateItem(item, empty);
-//
-//						if (item == null || empty)
-//							setText(null);
-//						else
-//							setText(item.getLabel());
-//					}
-//				});
-//				// seobrescreendo o método que mostra o conteudo selecionado
-//				cbFormaPagamento.setButtonCell(new ListCell<FormaPagamento>() {
-//					@Override
-//					protected void updateItem(FormaPagamento item, boolean empty) {
-//						super.updateItem(item, empty);
-//
-//						if (item == null || empty)
-//							setText(null);
-//						else
-//							setText(item.getLabel());
-//					}
-//				});
+// adicionando o conteudo do combobox
+		cbTipoServico.getItems().addAll(TipoServico.values());
+// sobreescrevendo o método que mostra o conteudo do combobox
+		cbTipoServico.setCellFactory(c -> new ListCell<TipoServico>() {
+			@Override
+			protected void updateItem(TipoServico item, boolean empty) {
+				super.updateItem(item, empty);
 
-		// final ToggleGroup group = new ToggleGroup();
+				if (item == null || empty)
+					setText(null);
+				else
+					setText(item.getLabel());
+			}
+		});
+// seobrescreendo o método que mostra o conteudo selecionado
+		cbTipoServico.setButtonCell(new ListCell<TipoServico>() {
+			@Override
+			protected void updateItem(TipoServico item, boolean empty) {
+				super.updateItem(item, empty);
 
-//				rbEmEspera.setToggleGroup(group);
-//				rbEmEspera.setSelected(true);
-//				rbLavando.setToggleGroup(group);
-//				rbConcluido.setToggleGroup(group);
-//				
+				if (item == null || empty)
+					setText(null);
+				else
+					setText(item.getLabel());
+			}
+		});
 
-		/*
-		 * group = new ToggleGroup();
-		 * 
-		 * rbEmEspera.setToggleGroup(group); rbLavando.setToggleGroup(group);
-		 * rbConcluido.setToggleGroup(group);
-		 * 
-		 * String output = "";
-		 * 
-		 * if (getServico().getStatus().equals("Em espera")) {
-		 * group.selectToggle(rbEmEspera);
-		 * 
-		 * 
-		 * 
-		 * }
-		 * 
-		 * else if (getServico().getStatus().equals("Lavando")) {
-		 * group.selectToggle(rbLavando); }
-		 * 
-		 * else if(getServico().getStatus().equals("Concluido")) {
-		 * group.selectToggle(rbConcluido); }
-		 */
+//adicionando o conteudo do combobox
+		cbStatus.getItems().addAll(Status.values());
+//sobreescrevendo o método que mostra o conteudo do combobox
+		cbStatus.setCellFactory(c -> new ListCell<Status>() {
+			@Override
+			protected void updateItem(Status item, boolean empty) {
+				super.updateItem(item, empty);
+
+				if (item == null || empty)
+					setText(null);
+				else
+					setText(item.getLabel());
+			}
+		});
+//seobrescreendo o método que mostra o conteudo selecionado
+		cbStatus.setButtonCell(new ListCell<Status>() {
+			@Override
+			protected void updateItem(Status item, boolean empty) {
+				super.updateItem(item, empty);
+
+				if (item == null || empty)
+					setText(null);
+				else
+					setText(item.getLabel());
+			}
+		});
 
 	}
 

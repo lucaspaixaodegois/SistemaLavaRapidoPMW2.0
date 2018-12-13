@@ -45,9 +45,9 @@ public class VeiculoRepository extends Repository<Veiculo> {
 	}
 	
 	public List<Veiculo> getPlacas(Cliente cliente) {
-		cliente.setId(208);
+		
 		Query query = getEntityManager()
-				.createQuery("SELECT v FROM Veiculo v WHERE v.idcliente=:cliente");
+				.createQuery("SELECT v FROM Veiculo v WHERE v.cliente=:cliente");
 		query.setParameter("cliente", cliente);
 
 		List<Veiculo> lista = query.getResultList();

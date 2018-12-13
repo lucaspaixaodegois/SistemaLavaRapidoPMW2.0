@@ -24,18 +24,26 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import model.Cliente;
+import model.Marca;
+import model.Modelo;
 import model.Servico;
 import model.Telefone;
 import model.TipoServico;
 import model.Veiculo;
 import repository.ServicoRepository;
+import repository.VeiculoRepository;
 
 public class FluxoServicoController extends Controller<Cliente> implements Initializable {
 
 	private Servico servico;
+	@FXML
+    private ComboBox<Cliente> cbCliente;
 
 	@FXML
 	private TextField tfPlaca;
+
+	@FXML
+	private ComboBox<Veiculo> cbPlacaCliente;
 
 	@FXML
 	private TableView<Servico> tvServico;
@@ -110,6 +118,17 @@ public class FluxoServicoController extends Controller<Cliente> implements Initi
 	}
 
 	@FXML
+	void handlePlaca(MouseEvent event) {
+		carregarComboBoxPlaca(cbCliente.getValue());
+	}
+
+	public void carregarComboBoxPlaca(Cliente cliente) {
+		VeiculoRepository repository = new VeiculoRepository(JPAFactory.getEntityManager());
+		List<Veiculo> lista = repository.getPlacas(cliente);
+		cbPlacaCliente.setItems(FXCollections.observableList(lista));
+	}
+
+	@FXML
 	void handleMouseClicked(MouseEvent event) throws IOException {
 		// verificando se eh o botao principal
 		if (event.getButton().equals(MouseButton.PRIMARY)) {
@@ -139,7 +158,7 @@ public class FluxoServicoController extends Controller<Cliente> implements Initi
 		tcServico.setCellValueFactory(new PropertyValueFactory<>("tiposervico"));
 		tcStatusServico.setCellValueFactory(new PropertyValueFactory<>("status"));
 		tcValorServico.setCellValueFactory(new PropertyValueFactory<>("valorTotal"));
-		
+
 		// adicionando o conteudo do combobox
 		cbTipoServico.getItems().addAll(TipoServico.values());
 		// sobreescrevendo o método que mostra o conteudo do combobox
