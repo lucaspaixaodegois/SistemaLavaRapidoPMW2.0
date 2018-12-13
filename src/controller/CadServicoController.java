@@ -19,8 +19,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import model.Cliente;
 import model.FormaPagamento;
-import model.Marca;
-import model.Modelo;
 import model.Servico;
 import model.TipoServico;
 import model.Veiculo;
@@ -87,14 +85,12 @@ public class CadServicoController extends Controller<Servico> implements Initial
 	void handleIncluir(ActionEvent event) {
 
 		getServico().setCliente(cbCliente.getValue());
-		//getServico().setPlacaCliente(cbPlacaCliente.getValue());
+		// getServico().setPlacaCliente(cbPlacaCliente.getValue());
 		getServico().setTiposervico(cbTipoServico.getValue());
 		getServico().setDataServico(dpServico.getValue());
 		getServico().setValorTotal(tfValorTotal.getText());
 		getServico().setFormapagamento(cbFormaPagamento.getValue());
 		getServico().setTaArea(taArea.getText());
-
-		System.out.println("teste");
 		super.save(getServico());
 
 		handleLimpar(event);

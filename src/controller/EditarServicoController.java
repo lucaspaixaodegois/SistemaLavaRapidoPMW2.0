@@ -12,17 +12,15 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.ListCell;
-import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.Cliente;
 import model.FormaPagamento;
 import model.Servico;
+import model.Status;
 import model.TipoServico;
-import model.Veiculo;
 
 public class EditarServicoController extends Controller<Servico> implements Initializable {
 
@@ -55,11 +53,17 @@ public class EditarServicoController extends Controller<Servico> implements Init
 	private Button btIncluir;
 
 	@FXML
+	private ComboBox<Status> cbStatus;
+	@FXML
 	private ComboBox<TipoServico> cbTipoServico;
 
 	@FXML
 	private DatePicker dpServico;
 
+	@FXML
+    private TextField tfEntrada;
+	@FXML
+    private TextField tfSaida;
 	@FXML
 	private ComboBox<FormaPagamento> cbFormaPagamento;
 
@@ -120,7 +124,9 @@ public class EditarServicoController extends Controller<Servico> implements Init
 		getServico().setValorTotal(tfValorTotal.getText());
 		getServico().setFormapagamento(cbFormaPagamento.getValue());
 		getServico().setTaArea(taArea.getText());
-
+		getServico().setTaArea(tfEntrada.getText());
+		getServico().setTaArea(tfSaida.getText());
+		//getServico().setCliente(cbStatus.getValue());
 		System.out.println("teste");
 		super.save(getServico());
 

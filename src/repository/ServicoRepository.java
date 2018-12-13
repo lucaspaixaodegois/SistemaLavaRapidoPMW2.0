@@ -16,8 +16,10 @@ public class ServicoRepository extends Repository<Servico> {
 	}
 	public List<Servico> getServico(String placa) {
 
-		Query query = getEntityManager().createQuery("SELECT c FROM Servico c WHERE lower(c.placa) like lower(:placa) ");
-		query.setParameter("placa", "%" + placa + "%");
+//		Query query = getEntityManager().createQuery("SELECT c FROM Servico c WHERE lower(c.placa) like lower(:placa) ");
+		Query query = getEntityManager().createQuery("SELECT c FROM Servico c ");
+
+		//query.setParameter("placa", "%" + placa + "%");
 
 		//jpql
 		

@@ -9,11 +9,12 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EditarServicoController">
-   <children>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="600.0">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EditarServicoController">
+   <center>
+      <AnchorPane minHeight="480.0" minWidth="600.0" BorderPane.alignment="CENTER">
          <children>
             <Label alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="80.0" text="Cliente:" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="50.0" />
             <ComboBox fx:id="cbCliente" layoutX="85.0" layoutY="50.0" promptText="Selecione o Cliente..." AnchorPane.leftAnchor="85.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="50.0" />
@@ -83,7 +84,7 @@
             </Button>
             <Label alignment="CENTER_RIGHT" layoutX="5.0" layoutY="205.0" prefHeight="25.0" prefWidth="80.0" text="Obs:" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="205.0" />
             <TextArea fx:id="taArea" layoutX="85.0" layoutY="230.0" prefHeight="120.0" prefWidth="495.0" AnchorPane.leftAnchor="85.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="230.0" />
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutY="18.0" prefHeight="30.0" prefWidth="600.0" text="Editar DADOS DO Serviço" textAlignment="CENTER" textFill="#1e1c1c" AnchorPane.topAnchor="10.0">
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutY="18.0" prefHeight="30.0" prefWidth="600.0" text="Editar DADOS DO Serviço" textAlignment="CENTER" textFill="#1e1c1c">
                <font>
                   <Font name="Army Thin" size="25.0" />
                </font>
@@ -93,5 +94,5 @@
             <TextField fx:id="tfSaida" alignment="TOP_CENTER" layoutX="264.0" layoutY="155.0" prefHeight="25.0" prefWidth="99.0" promptText="HH:MM" AnchorPane.leftAnchor="251.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="155.0" />
          </children>
       </AnchorPane>
-   </children>
-</AnchorPane>
+   </center>
+</BorderPane>

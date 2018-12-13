@@ -101,4 +101,6 @@ public class Servico extends DefaultEntity<Servico> {
 	public void setStatus(Status status) {
 		this.status = status;
 	}
+
+	
 }
