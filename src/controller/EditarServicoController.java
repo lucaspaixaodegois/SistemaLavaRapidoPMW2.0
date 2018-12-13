@@ -88,7 +88,7 @@ public class EditarServicoController extends Controller<Servico> implements Init
 		// stage.initStyle(StageStyle.UNDECORATED);
 		stage.initModality(Modality.WINDOW_MODAL);
 
-		tfValorTotal.setText(servico.getValorTotal());
+		tfValorTotal.setText(servico.getValorTotal().toString());
 		taArea.setText(servico.getTaArea());
 		cbTipoServico.setValue(servico.getTiposervico());
 		cbFormaPagamento.setValue(servico.getFormapagamento());
@@ -132,7 +132,7 @@ public class EditarServicoController extends Controller<Servico> implements Init
 		getServico().setCliente(cbCliente.getValue());
 		getServico().setTiposervico(cbTipoServico.getValue());
 		getServico().setDataServico(dpServico.getValue());
-		getServico().setValorTotal(tfValorTotal.getText());
+		getServico().setValorTotal(Double.parseDouble(tfValorTotal.getText()));
 		getServico().setFormapagamento(cbFormaPagamento.getValue());
 		getServico().setTaArea(taArea.getText());
 		getServico().setEntrada(tfEntrada.getText());
@@ -167,7 +167,7 @@ public class EditarServicoController extends Controller<Servico> implements Init
 		getServico().setCliente(cbCliente.getValue());
 		getServico().setTiposervico(cbTipoServico.getValue());
 		getServico().setDataServico(dpServico.getValue());
-		getServico().setValorTotal(tfValorTotal.getText());
+		getServico().setValorTotal(Double.parseDouble(tfValorTotal.getText()));
 		getServico().setFormapagamento(cbFormaPagamento.getValue());
 		getServico().setTaArea(taArea.getText());
 		getServico().setEntrada(tfEntrada.getText());
@@ -286,7 +286,7 @@ public class EditarServicoController extends Controller<Servico> implements Init
 					setText(item.getLabel());
 			}
 		});
-//seobrescreendo o método que mostra o conteudo selecionado
+		//seobrescreendo o método que mostra o conteudo selecionado
 		cbStatus.setButtonCell(new ListCell<Status>() {
 			@Override
 			protected void updateItem(Status item, boolean empty) {

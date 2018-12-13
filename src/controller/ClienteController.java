@@ -102,7 +102,6 @@ public class ClienteController extends Controller<Cliente> implements Initializa
 
 		// atualizando osbotoes
 		atualizarBotoes();
-		
 
 	}
 
@@ -155,7 +154,6 @@ public class ClienteController extends Controller<Cliente> implements Initializa
 				tfEndereco.setText(getCliente().getEndereco());
 				tfEmail.setText(getCliente().getEmail());
 				dpAniversario.setValue(getCliente().getDataAniversario());
-				// cbSexo.setValue(getCliente().getSexo());
 
 				// preenchendo os telefone
 				tbTelefone.setItems(FXCollections.observableList(getCliente().getListaTelefone()));
@@ -191,8 +189,7 @@ public class ClienteController extends Controller<Cliente> implements Initializa
 		getCliente().setEndereco(tfEndereco.getText());
 		getCliente().setEmail(tfEmail.getText());
 		getCliente().setDataAniversario(dpAniversario.getValue());
-		// getCliente().setSexo(cbSexo.getValue());
-
+		
 		save(getCliente());
 
 		handleLimpar(event);

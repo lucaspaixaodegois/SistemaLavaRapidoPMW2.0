@@ -85,6 +85,8 @@ public class ConsultaVeiculoController extends Controller<Veiculo> implements In
 		tcModeloVeiculo.setCellValueFactory(new PropertyValueFactory<>("modelo"));
 		tcTamanhoVeiculo.setCellValueFactory(new PropertyValueFactory<>("tamanho"));
 		tcCorVeiculo.setCellValueFactory(new PropertyValueFactory<>("cor"));
+		tcNomeCliente.setCellValueFactory(new PropertyValueFactory<>("cliente"));
+
 	}
 
 }

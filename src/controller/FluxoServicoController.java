@@ -24,8 +24,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import model.Cliente;
-import model.Marca;
-import model.Modelo;
 import model.Servico;
 import model.Telefone;
 import model.TipoServico;

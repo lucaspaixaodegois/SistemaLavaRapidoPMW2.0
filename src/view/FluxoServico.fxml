@@ -16,6 +16,11 @@
    <center>
       <AnchorPane prefHeight="460.0" prefWidth="569.0" BorderPane.alignment="CENTER">
          <children>
+            <Label alignment="CENTER" layoutY="2.0" prefHeight="40.0" prefWidth="793.0" text="fluxo de veículos" textAlignment="CENTER" textFill="#1e1c1c">
+               <font>
+                  <Font name="Army Thin" size="25.0" />
+               </font>
+            </Label>
             <TableView fx:id="tvServico" layoutY="112.0" onMouseClicked="#handleMouseClicked" prefHeight="184.0" prefWidth="589.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="115.0">
                <columns>
                   <TableColumn fx:id="tcIdServico" prefWidth="16.0" text="Id" />

@@ -133,9 +133,8 @@ public class CadClienteController extends Controller<Cliente> implements Initial
 
 		// Carregar combobox com as Marcas
 		carregarComboBoxMarcas();
-		// carregarComboBoxModelo();
-
 		// adicionando o conteudo do combobox
+		
 		cbTamanho.getItems().addAll(Tamanho.values());
 		// sobreescrevendo o m�todo que mostra o conteudo do combobox
 		cbTamanho.setCellFactory(c -> new ListCell<Tamanho>() {
@@ -162,7 +161,6 @@ public class CadClienteController extends Controller<Cliente> implements Initial
 					setText(item.getLabel());
 			}
 		});
-
 		// atualizando os botoes
 		atualizarBotoes();
 
@@ -228,8 +226,7 @@ public class CadClienteController extends Controller<Cliente> implements Initial
 		Veiculo car = new Veiculo();
 		car.setPlaca(tfPlaca.getText());
 		car.setCor(tfCor.getText());
-		car.setMarca(cbMarca.getValue());	
-//		getVeiculo().setMarca(cbMarca.getValue());
+		car.setMarca(cbMarca.getValue());
 		car.setModelo(cbModelo.getValue());
 		car.setTamanho(cbTamanho.getValue());
 		car.setCliente(cliente);
@@ -280,7 +277,7 @@ public class CadClienteController extends Controller<Cliente> implements Initial
 
 		getCliente().setPlaca(tfPlaca.getText());
 		getCliente().setCor(tfCor.getText());
-		//getVeiculo().setMarca(cbMarca.getValue());
+		// getVeiculo().setMarca(cbMarca.getValue());
 		getCliente().setModelo(cbModelo.getValue());
 		getCliente().setTamanho(cbTamanho.getValue());
 
@@ -306,7 +303,6 @@ public class CadClienteController extends Controller<Cliente> implements Initial
 		tfCpfCnpj.requestFocus();
 
 		// limpando as tables
-//		tvCliente.getItems().clear();
 		tvTelefone.getItems().clear();
 
 		atualizarBotoes();

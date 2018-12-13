@@ -142,11 +142,11 @@ public class CadVeiculoController extends Controller<Veiculo> implements Initial
 		cbMarca.setItems(FXCollections.observableList(lista));
 	}
 
-	
-    @FXML
-    void handleModelo(MouseEvent event) {
+	@FXML
+	void handleModelo(MouseEvent event) {
 		carregarComboBoxModelo(cbMarca.getValue());
-    }
+	}
+
 	public void carregarComboBoxModelo(Marca marca) {
 		VeiculoRepository repository = new VeiculoRepository(JPAFactory.getEntityManager());
 		List<Modelo> lista = repository.getModeloVeiculo(marca);

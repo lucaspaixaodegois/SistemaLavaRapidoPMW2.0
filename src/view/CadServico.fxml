@@ -12,6 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CadServicoController">
    <bottom>
@@ -92,6 +93,11 @@
             </Button>
             <TextArea fx:id="taArea" layoutX="85.0" layoutY="223.0" prefHeight="120.0" prefWidth="495.0" AnchorPane.leftAnchor="85.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="180.0" />
             <ComboBox fx:id="cbPlacaCliente" layoutX="413.0" layoutY="50.0" onMouseClicked="#handlePlaca" prefHeight="25.0" prefWidth="143.0" promptText="Selecione a Placa..." AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="50.0" />
+            <Label alignment="CENTER" prefHeight="40.0" prefWidth="600.0" text="CADASTRO DE NOVO SERVIÇO" textAlignment="CENTER" textFill="#1e1c1c">
+               <font>
+                  <Font name="Army Thin" size="25.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </center>

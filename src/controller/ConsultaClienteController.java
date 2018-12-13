@@ -65,7 +65,6 @@ public class ConsultaClienteController extends Controller<Cliente> implements In
 		tcEnderecoCliente.setCellValueFactory(new PropertyValueFactory<>("endereco"));
 		tcEmailCliente.setCellValueFactory(new PropertyValueFactory<>("email"));
 		
-
 	}
 
 	@FXML

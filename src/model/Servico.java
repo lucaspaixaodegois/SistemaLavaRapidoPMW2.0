@@ -19,7 +19,7 @@ public class Servico extends DefaultEntity<Servico> {
 	private FormaPagamento formapagamento;
 	private Status status;
 
-	private String valorTotal;
+	private Double valorTotal;
 	private String taArea;
 	private String entrada;
 	private String saida;
@@ -33,7 +33,7 @@ public class Servico extends DefaultEntity<Servico> {
 	}
 
 	public Servico(Cliente cliente, TipoServico tiposervico, FormaPagamento formapagamento, String placa,
-			String valorTotal, String taArea, LocalDate dataServico, Status status) {
+			Double valorTotal, String taArea, LocalDate dataServico, Status status) {
 		super();
 		this.cliente = cliente;
 		this.tiposervico = tiposervico;
@@ -68,11 +68,11 @@ public class Servico extends DefaultEntity<Servico> {
 		this.formapagamento = formapagamento;
 	}
 
-	public String getValorTotal() {
+	public Double getValorTotal() {
 		return valorTotal;
 	}
 
-	public void setValorTotal(String valorTotal) {
+	public void setValorTotal(Double valorTotal) {
 		this.valorTotal = valorTotal;
 	}
 

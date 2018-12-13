@@ -31,8 +31,7 @@ public class Controller<T extends DefaultEntity<? super T>> {
 	}
 
 	protected void updateItem(Tamanho item, boolean empty) {
-		// TODO Auto-generated method stub
-
+	
 	}
 	
 	public static Usuario getUsuarioLogado() {

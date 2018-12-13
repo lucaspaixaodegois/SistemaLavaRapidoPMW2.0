@@ -139,7 +139,6 @@ public class EditarClienteController extends Controller<Cliente> implements Init
 		Scene scene = new Scene(parent, 800, 650);
 		stage.setScene(scene);
 		stage.setResizable(false);
-		// stage.initStyle(StageStyle.UNDECORATED);
 		stage.initModality(Modality.WINDOW_MODAL);
 
 		tfNomeCliente.setText(cliente.getNome());
@@ -281,7 +280,6 @@ public class EditarClienteController extends Controller<Cliente> implements Init
 
 		getCliente().setPlaca(tfPlaca.getText());
 		getCliente().setCor(tfCor.getText());
-//		getVeiculo().setMarca(cbMarca.getValue());
 		getCliente().setModelo(cbModelo.getValue());
 		getCliente().setTamanho(cbTamanho.getValue());
 

@@ -99,8 +99,7 @@ public class EditarVeiculoController extends Controller<Cliente> implements Init
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
-
+	
 	}
 
 	public Veiculo getVeiculo() {
@@ -112,8 +111,7 @@ public class EditarVeiculoController extends Controller<Cliente> implements Init
 	}
 
 	public void setParent(Parent parent) {
-		// TODO Auto-generated method stub
-
+		
 	}
 
 }

@@ -64,61 +64,41 @@ public class TemplateController implements Initializable {
 		vbox.setAlignment(Pos.TOP_CENTER);
 		vbox.getChildren().add(novoClienteView);
 		scrollPane.setContent(vbox);
-
-//		Main.trocaTela(1);
 	}
 
 	@FXML
 	void handleNovoVeiculo(ActionEvent event) throws IOException {
-//		VBox vbox = new VBox();
-//		vbox.setAlignment(Pos.TOP_CENTER);
-//		vbox.getChildren().add(novoVeiculoView);
-//		scrollPane.setContent(vbox);
+
 		Main.trocaTela(2);
 	}
 
 	@FXML
 	void handleNovoServico(ActionEvent event) throws IOException {
-//		VBox vbox = new VBox();
-//		vbox.setAlignment(Pos.TOP_CENTER);
-//		vbox.getChildren().add(novoServicoView);
-//		scrollPane.setContent(vbox);
+
 		Main.trocaTela(3);
 	}
 
 	@FXML
 	void handleBuscaCliente(ActionEvent event) throws IOException {
-//		VBox vbox = new VBox();
-//		vbox.setAlignment(Pos.TOP_CENTER);
-//		vbox.getChildren().add(consultaClienteView);
-//		scrollPane.setContent(vbox);
+
 		Main.trocaTela(4);
 	}
 
 	@FXML
 	void handleBuscaVeiculo(ActionEvent event) throws IOException {
-//		VBox vbox = new VBox();
-//		vbox.setAlignment(Pos.TOP_CENTER);
-//		vbox.getChildren().add(consultaVeiculoView);
-//		scrollPane.setContent(vbox);
+
 		Main.trocaTela(5);
 	}
 
 	@FXML
 	void handleFluxoServico(ActionEvent event) throws IOException {
-//		VBox vbox = new VBox();
-//		vbox.setAlignment(Pos.TOP_CENTER);
-//		vbox.getChildren().add(fluxoServicoView);
-//		scrollPane.setContent(vbox);
+
 		Main.trocaTela(6);
 	}
 
 	@FXML
 	void handleFluxoCaixa(ActionEvent event) throws IOException {
-//		VBox vbox = new VBox();
-//		vbox.setAlignment(Pos.TOP_CENTER);
-//		vbox.getChildren().add(fluxoCaixaView);
-//		scrollPane.setContent(vbox);
+
 		Main.trocaTela(7);
 	}
 	

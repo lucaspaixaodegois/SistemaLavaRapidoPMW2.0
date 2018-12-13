@@ -91,9 +91,7 @@ public class CadMarcaModeloController extends Controller<Veiculo> implements Ini
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
-
-		
+	
 	}
 	public Parent getParent() {
 		return parent;

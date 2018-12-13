@@ -85,10 +85,9 @@ public class CadServicoController extends Controller<Servico> implements Initial
 	void handleIncluir(ActionEvent event) {
 
 		getServico().setCliente(cbCliente.getValue());
-		// getServico().setPlacaCliente(cbPlacaCliente.getValue());
 		getServico().setTiposervico(cbTipoServico.getValue());
 		getServico().setDataServico(dpServico.getValue());
-		getServico().setValorTotal(tfValorTotal.getText());
+		getServico().setValorTotal(Double.parseDouble(tfValorTotal.getText()));
 		getServico().setFormapagamento(cbFormaPagamento.getValue());
 		getServico().setTaArea(taArea.getText());
 		super.save(getServico());
