@@ -30,6 +30,7 @@
                   <TableColumn fx:id="tcServico" prefWidth="48.0" text="Serviço" />
                   <TableColumn fx:id="tcValorServico" prefWidth="53.0" text="Valor R$" />
                   <TableColumn fx:id="tcStatusServico" prefWidth="42.0" text="Status" />
+                  <TableColumn fx:id="tcObs" prefWidth="42.0" text="Obs" />
                </columns>
             </TableView>
             <Label alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="30.0" text="De:" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="50.0">

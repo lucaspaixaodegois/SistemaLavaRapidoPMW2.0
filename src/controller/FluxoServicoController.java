@@ -47,6 +47,8 @@ public class FluxoServicoController extends Controller<Cliente> implements Initi
 
 	@FXML
 	private TableView<Servico> tvServico;
+	@FXML
+	private TableColumn<Servico, String> tcObs;
 
 	@FXML
 	private TableColumn<Servico, String> tcIdServico;
@@ -158,6 +160,8 @@ public class FluxoServicoController extends Controller<Cliente> implements Initi
 		tcServico.setCellValueFactory(new PropertyValueFactory<>("tiposervico"));
 		tcStatusServico.setCellValueFactory(new PropertyValueFactory<>("status"));
 		tcValorServico.setCellValueFactory(new PropertyValueFactory<>("valorTotal"));
+		tcObs.setCellValueFactory(new PropertyValueFactory<>("taArea"));
+		
 
 		// adicionando o conteudo do combobox
 		cbTipoServico.getItems().addAll(TipoServico.values());

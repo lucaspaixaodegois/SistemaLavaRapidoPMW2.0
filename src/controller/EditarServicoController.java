@@ -139,7 +139,6 @@ public class EditarServicoController extends Controller<Servico> implements Init
 		getServico().setSaida(tfSaida.getText());
 		getServico().setStatus(cbStatus.getValue());
 
-		System.out.println("teste");
 		super.save(getServico());
 
 		handleLimpar(event);
@@ -219,8 +218,6 @@ public class EditarServicoController extends Controller<Servico> implements Init
 
 		atualizarBotoes();
 
-		//cbCliente.setDisable(true);
-
 		// adicionando o conteudo do combobox
 		cbFormaPagamento.getItems().addAll(FormaPagamento.values());
 		// sobreescrevendo o método que mostra o conteudo do combobox
@@ -248,9 +245,9 @@ public class EditarServicoController extends Controller<Servico> implements Init
 			}
 		});
 
-// adicionando o conteudo do combobox
+		// adicionando o conteudo do combobox
 		cbTipoServico.getItems().addAll(TipoServico.values());
-// sobreescrevendo o método que mostra o conteudo do combobox
+		// sobreescrevendo o método que mostra o conteudo do combobox
 		cbTipoServico.setCellFactory(c -> new ListCell<TipoServico>() {
 			@Override
 			protected void updateItem(TipoServico item, boolean empty) {
@@ -262,7 +259,7 @@ public class EditarServicoController extends Controller<Servico> implements Init
 					setText(item.getLabel());
 			}
 		});
-// seobrescreendo o método que mostra o conteudo selecionado
+		// seobrescreendo o método que mostra o conteudo selecionado
 		cbTipoServico.setButtonCell(new ListCell<TipoServico>() {
 			@Override
 			protected void updateItem(TipoServico item, boolean empty) {
@@ -275,9 +272,9 @@ public class EditarServicoController extends Controller<Servico> implements Init
 			}
 		});
 
-//adicionando o conteudo do combobox
+		//adicionando o conteudo do combobox
 		cbStatus.getItems().addAll(Status.values());
-//sobreescrevendo o método que mostra o conteudo do combobox
+		//sobreescrevendo o método que mostra o conteudo do combobox
 		cbStatus.setCellFactory(c -> new ListCell<Status>() {
 			@Override
 			protected void updateItem(Status item, boolean empty) {
@@ -303,9 +300,6 @@ public class EditarServicoController extends Controller<Servico> implements Init
 		});
 
 	}
-
-//	// atualizando a interface com o nome do cliente
-//			nomeCliente.setText(Controller.getUsuarioLogado().getNome());
 
 	public void setParent(Parent parent) {
 		this.parent = parent;
