@@ -1,20 +1,27 @@
 package controller;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import application.TextFieldFormatter;
+import factory.JPAFactory;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.Cliente;
@@ -22,6 +29,9 @@ import model.FormaPagamento;
 import model.Servico;
 import model.Status;
 import model.TipoServico;
+import model.Veiculo;
+import repository.ServicoRepository;
+import repository.VeiculoRepository;
 
 public class EditarServicoController extends Controller<Servico> implements Initializable {
 
@@ -33,7 +43,7 @@ public class EditarServicoController extends Controller<Servico> implements Init
 	private ComboBox<Cliente> cbCliente;
 
 	@FXML
-	private ComboBox<Cliente> cbPlacaCliente;
+	private ComboBox<Veiculo> cbPlacaCliente;
 
 	@FXML
 	private TextField tfValorTotal;
@@ -142,6 +152,17 @@ public class EditarServicoController extends Controller<Servico> implements Init
 	}
 
 	@FXML
+	void handlePlaca(MouseEvent event) {
+		carregarComboBoxPlaca(cbCliente.getValue());
+	}
+
+	public void carregarComboBoxPlaca(Cliente cliente) {
+		VeiculoRepository repository = new VeiculoRepository(JPAFactory.getEntityManager());
+		List<Veiculo> lista = repository.getPlacas(cliente);
+		cbPlacaCliente.setItems(FXCollections.observableList(lista));
+	}
+
+	@FXML
 	void handleAlterar(ActionEvent event) {
 
 		getServico().setCliente(cbCliente.getValue());
@@ -153,6 +174,8 @@ public class EditarServicoController extends Controller<Servico> implements Init
 		getServico().setEntrada(tfEntrada.getText());
 		getServico().setSaida(tfSaida.getText());
 		getServico().setStatus(cbStatus.getValue());
+
+		ServicoRepository repository = new ServicoRepository(JPAFactory.getEntityManager());
 
 		super.save(getServico());
 		handleLimpar(event);
@@ -195,6 +218,8 @@ public class EditarServicoController extends Controller<Servico> implements Init
 	public void initialize(URL location, ResourceBundle resources) {
 
 		atualizarBotoes();
+
+		//cbCliente.setDisable(true);
 
 		// adicionando o conteudo do combobox
 		cbFormaPagamento.getItems().addAll(FormaPagamento.values());
@@ -278,6 +303,9 @@ public class EditarServicoController extends Controller<Servico> implements Init
 		});
 
 	}
+
+//	// atualizando a interface com o nome do cliente
+//			nomeCliente.setText(Controller.getUsuarioLogado().getNome());
 
 	public void setParent(Parent parent) {
 		this.parent = parent;

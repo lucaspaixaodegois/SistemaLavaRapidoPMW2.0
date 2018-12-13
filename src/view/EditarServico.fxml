@@ -16,7 +16,7 @@
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <Label alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="80.0" text="Cliente:" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="50.0" />
-            <ComboBox fx:id="cbCliente" layoutX="85.0" layoutY="50.0" promptText="Selecione o Cliente..." AnchorPane.leftAnchor="85.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="50.0" />
+            <ComboBox fx:id="cbCliente" layoutX="85.0" layoutY="50.0" promptText="Selecione o Cliente..." style="-fx-background-color: FFFFFF;" AnchorPane.leftAnchor="85.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="50.0" />
             <Label alignment="CENTER_RIGHT" layoutX="344.0" layoutY="50.0" prefHeight="25.0" prefWidth="80.0" text="Placa:" AnchorPane.rightAnchor="165.0" AnchorPane.topAnchor="50.0" />
             <Label alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="80.0" text="Serviço:" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="85.0" />
             <ComboBox fx:id="cbTipoServico" promptText="Selecione o tipo de Serviço..." AnchorPane.leftAnchor="85.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="85.0" />
@@ -89,7 +89,7 @@
                </font>
             </Label>
             <Label alignment="CENTER" layoutX="190.0" layoutY="155.0" prefHeight="25.0" prefWidth="60.0" text="Saida: " AnchorPane.leftAnchor="190.0" AnchorPane.topAnchor="155.0" />
-            <ComboBox fx:id="cbPlacaCliente" promptText="Selecione a Placa..." AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="50.0" />
+            <ComboBox fx:id="cbPlacaCliente" onMouseClicked="#handlePlaca" promptText="Selecione a Placa..." AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="50.0" />
             <TextField fx:id="tfSaida" alignment="TOP_CENTER" layoutX="264.0" layoutY="155.0" onKeyReleased="#tfHoraSaidaReleased" prefHeight="25.0" prefWidth="99.0" promptText="HH:MM" AnchorPane.leftAnchor="251.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="155.0" />
          </children>
       </AnchorPane>
