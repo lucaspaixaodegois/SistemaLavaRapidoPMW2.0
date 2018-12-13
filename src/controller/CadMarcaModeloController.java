@@ -1,8 +1,10 @@
 package controller;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -22,7 +24,7 @@ public class CadMarcaModeloController extends Controller<Veiculo> implements Ini
 	private Veiculo veiculo;
 	private Stage stage;
 	private Parent parent;
-	
+
 	@FXML
 	private Button btLimpar;
 
@@ -41,18 +43,18 @@ public class CadMarcaModeloController extends Controller<Veiculo> implements Ini
 	@FXML
 	private TextField tfMarca;
 	@FXML
-    private TableView<Veiculo> tvMarcaModelo;
+	private TableView<Veiculo> tvMarcaModelo;
 	@FXML
 	private TableColumn<Veiculo, String> tcMarca;
 	@FXML
 	private TableColumn<Veiculo, String> tcModelo;
 
-	
 	@FXML
 	void handleAdicionarMarcaModelo(ActionEvent event) {
-//		Veiculo NovaMarcaModelo = new Veiculo();
-//		NovaMarcaModelo.setMarca(tfMarca.getText());
-//		NovaMarcaModelo.setModelo(tfModelo.getText());
+	}
+//		Veiculo car = new Veiculo();
+//		car.setMarca(tfMarca.getText());
+//		car.setModelo(tfModelo.getText());
 //		
 //		if (getCliente().getListaVeiculo() == null)
 //			getCliente().setListaVeiculo(new ArrayList<Veiculo>());
@@ -61,14 +63,11 @@ public class CadMarcaModeloController extends Controller<Veiculo> implements Ini
 //
 //		// atualizando a interface
 //		tvVeiculo.setItems(FXCollections.observableList(getCliente().getListaVeiculo()));
-//		
 //		// limpando os campos
-//		tfModelo.clear();
-//		tfMarca.clear();
-//		
-//		//inicia o curso no campo marca
-//		tfMarca.requestFocus();
-	}
+//		tfPlaca.clear();
+//		tfCor.clear();
+//	}
+
 	@FXML
 	void handleAlterar(ActionEvent event) {
 
@@ -91,8 +90,9 @@ public class CadMarcaModeloController extends Controller<Veiculo> implements Ini
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-	
+
 	}
+
 	public Parent getParent() {
 		return parent;
 
@@ -110,7 +110,7 @@ public class CadMarcaModeloController extends Controller<Veiculo> implements Ini
 	public void setStage(Stage stage) {
 		this.stage = stage;
 	}
-	
+
 	public Veiculo getVeiculo() {
 		if (veiculo == null)
 			veiculo = new Veiculo();

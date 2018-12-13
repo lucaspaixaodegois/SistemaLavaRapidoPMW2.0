@@ -17,7 +17,7 @@ public class UsuarioRepository extends Repository<Usuario> {
 	
 	public List<Usuario> getLogin(String cpf, String senha) {
 		Query query = getEntityManager()
-				.createQuery("SELECT c FROM Usuario c WHERE lower(c.cpf) like(:cpf) AND lower(c.senha) like(:senha)");
+				.createQuery("SELECT c FROM Usuario c WHERE c.cpf=:cpf AND c.senha=:senha");
 		query.setParameter("cpf", cpf);
 		query.setParameter("senha", senha);
 

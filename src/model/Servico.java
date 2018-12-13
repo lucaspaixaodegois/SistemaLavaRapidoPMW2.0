@@ -14,6 +14,9 @@ public class Servico extends DefaultEntity<Servico> {
 	@ManyToOne
 	@JoinColumn(name = "idCliente")
 	private Cliente cliente;
+	
+	
+	
 
 	private TipoServico tiposervico;
 	private FormaPagamento formapagamento;
@@ -115,5 +118,6 @@ public class Servico extends DefaultEntity<Servico> {
 	public void setSaida(String saida) {
 		this.saida = saida;
 	}
+
 
 }

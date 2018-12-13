@@ -19,14 +19,18 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
+import model.Cliente;
+import model.FormaPagamento;
 import model.Servico;
+import model.Status;
 import model.Tamanho;
 import model.TipoServico;
 import model.Veiculo;
 import repository.ServicoRepository;
 
 public class FluxoCaixaController extends Controller<Servico> implements Initializable {
-
+private Cliente cliente;
+	
 	@FXML
 	private ComboBox<TipoServico> cbTipoServico;
 	@FXML
@@ -116,12 +120,14 @@ public class FluxoCaixaController extends Controller<Servico> implements Initial
 
 		tcIdServico.setCellValueFactory(new PropertyValueFactory<>("Id"));
 		tcDataServico.setCellValueFactory(new PropertyValueFactory<>("Data"));
-		tcServico.setCellValueFactory(new PropertyValueFactory<>("Servico"));
-		tcMarcaServico.setCellValueFactory(new PropertyValueFactory<>("Marca"));
-		tcModeloServico.setCellValueFactory(new PropertyValueFactory<>("Modelo"));
+		tcServico.setCellValueFactory(new PropertyValueFactory<>("tiposervico"));
+		tcMarcaServico.setCellValueFactory(new PropertyValueFactory<>("marca"));
+		tcModeloServico.setCellValueFactory(new PropertyValueFactory<>("modelo"));
 		tcTamanhoVeiculo.setCellValueFactory(new PropertyValueFactory<>("Tamanho"));
 		tcPlacaServico.setCellValueFactory(new PropertyValueFactory<>("Placa"));
 		tcValorServico.setCellValueFactory(new PropertyValueFactory<>("valorTotal"));
+		
+		
 		
 		handleTotalServicos();
 		// adicionando o conteudo do combobox
@@ -138,6 +144,14 @@ public class FluxoCaixaController extends Controller<Servico> implements Initial
 					setText(item.getLabel());
 			}
 		});
+	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
 
 }

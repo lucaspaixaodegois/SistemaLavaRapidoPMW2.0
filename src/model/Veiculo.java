@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -91,6 +93,27 @@ public class Veiculo extends DefaultEntity<Veiculo> {
 	@Override
 	public String toString() {
 		return getPlaca();
+	}
+
+	public void setNmarca(String text) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setNmodelo(String text) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	public void setListaVeiculo(ArrayList<Veiculo> arrayList) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Object getListaVeiculo() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

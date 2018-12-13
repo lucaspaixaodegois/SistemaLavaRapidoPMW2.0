@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import application.Util;
 import factory.JPAFactory;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -79,7 +80,10 @@ public class LoginController extends Controller<Usuario> implements Initializabl
 	public void acessarSistema(ActionEvent event) throws IOException, InterruptedException {
 
 		UsuarioRepository repository = new UsuarioRepository(JPAFactory.getEntityManager());
-		List<Usuario> usuario = repository.getLogin(tfUsuario.getText(), tfSenha.getText());
+
+		System.out.println("Senha encriptada: " + Util.encrypt(tfSenha.getText()));
+		
+		List<Usuario> usuario = repository.getLogin(tfUsuario.getText(), Util.encrypt(tfSenha.getText()));
 
 		if (!usuario.isEmpty()) {
 
