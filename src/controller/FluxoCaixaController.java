@@ -88,6 +88,19 @@ public class FluxoCaixaController extends Controller<Servico> implements Initial
 		tvFluxoCaixa.setItems(FXCollections.observableList(lista));
 	}
 
+	public void handleTotalServicos() {
+		ServicoRepository repository = new ServicoRepository(JPAFactory.getEntityManager());
+		List<Servico> lista  = repository.getTotalServico();
+		
+		Double t = 0.0;
+		
+		for (Servico servico : lista) {
+			t = t + servico.getValorTotal();
+		}
+		
+		tfFaturamento.setText(t.toString());
+	}
+
 	@FXML
 	void handleServico(ActionEvent event) {
 
@@ -104,12 +117,13 @@ public class FluxoCaixaController extends Controller<Servico> implements Initial
 		tcIdServico.setCellValueFactory(new PropertyValueFactory<>("Id"));
 		tcDataServico.setCellValueFactory(new PropertyValueFactory<>("Data"));
 		tcServico.setCellValueFactory(new PropertyValueFactory<>("Servico"));
-		tcMarcaServico.setCellValueFactory(new PropertyValueFactory<>("marca"));
-		tcModeloServico.setCellValueFactory(new PropertyValueFactory<>("modelo"));
+		tcMarcaServico.setCellValueFactory(new PropertyValueFactory<>("Marca"));
+		tcModeloServico.setCellValueFactory(new PropertyValueFactory<>("Modelo"));
 		tcTamanhoVeiculo.setCellValueFactory(new PropertyValueFactory<>("Tamanho"));
-		tcPlacaServico.setCellValueFactory(new PropertyValueFactory<>("placa"));
+		tcPlacaServico.setCellValueFactory(new PropertyValueFactory<>("Placa"));
 		tcValorServico.setCellValueFactory(new PropertyValueFactory<>("valorTotal"));
-
+		
+		handleTotalServicos();
 		// adicionando o conteudo do combobox
 		cbTipoServico.getItems().addAll(TipoServico.values());
 		// sobreescrevendo o método que mostra o conteudo do combobox
